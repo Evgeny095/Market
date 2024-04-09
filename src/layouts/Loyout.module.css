@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+
+    flex: 1 0 auto;
+
+    width: 80%;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.main{
+    padding-bottom: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* Media */
+
+@media (max-width: 1550px) {
+    .content {
+        width: 98%;
+    }
+}

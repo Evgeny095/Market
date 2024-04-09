@@ -1,0 +1,17 @@
+.wrapper {
+    position: relative;
+}
+
+.count {
+    position: absolute;
+    right: -5px;
+    top: -10px;
+    background-color: #5661CB;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    pointer-events: none;
+    font-size: 14px;
+}

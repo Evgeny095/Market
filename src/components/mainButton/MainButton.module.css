@@ -1,0 +1,80 @@
+.button {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+
+    border: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: #5661CB;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.button_white {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+
+    border: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+
+.button_opacity {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+
+    border: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid #5661CB;
+    color: #5661CB;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.button_white:hover {
+    background-color: white;
+    color: #5661CB;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+.button_opacity:hover {
+    background-color: #5661CB;
+    color: white;
+}
+
+.button:active,
+.button.focus {
+    background-color: #3c49bd;
+}

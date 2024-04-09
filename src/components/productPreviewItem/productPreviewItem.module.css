@@ -1,0 +1,237 @@
+.container {
+    width: 243px;
+    height: 350px;
+    /* border: 1px solid gray; */
+    box-shadow: 0px 0px 11px -5px rgba(34, 60, 80, 0.6);
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+}
+
+.remove {
+    opacity: 0;
+}
+
+.top_element {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    width: 100%;
+    height: 85%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.content a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    height: 60px;
+}
+
+.description {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    height: 50px;
+}
+
+.development{
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+}
+
+.development span{
+    color: #5661CB;
+}
+
+.market_state {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.market_state p {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-decoration: underline;
+    color: #219653;
+}
+
+.price {
+    width: 100%;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    color: #272727;
+}
+
+.price span {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+
+
+.cart {
+    width: 55px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #5661CB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.cart:hover {
+    opacity: 0.8;
+}
+
+.adv_img {
+    width: 109px;
+    height: 23px;
+}
+
+.favorite {
+    margin-right: 10px;
+}
+
+.prewImg {
+    height: 70px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.favorite_adaptive {
+    display: none;
+}
+
+
+@media (max-width: 510px) {
+    .container {
+        width: 150px;
+        height: 235px;
+        /* border: 1px solid gray; */
+        box-shadow: 0px 0px 11px -5px rgba(34, 60, 80, 0.6);
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        flex-grow: 1;
+        position: relative;
+        gap: 0;
+    }
+
+    .content {
+        gap: 3px;
+        padding: 5px;
+        padding-top: 0;
+    }
+
+    .buttons {
+        justify-content: space-between;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .seeMore {
+        display: none;
+    }
+
+    .favorite {
+        display: none;
+    }
+
+    .favorite_adaptive {
+        display: block;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .top_element {
+        width: 100%;
+        height: 8%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header {
+        line-height: 13px;
+        font-size: 11px;
+        font-weight: bold;
+        text-align: center;
+        height: 50px;
+    }
+    .development{
+       font-size: 10px;
+    }
+
+    .market_state {
+        flex-direction: column;
+    }
+
+    .market_state p {
+        font-size: 10px;
+        text-decoration: none;
+    }
+
+    .adv_img {
+        width: 80px;
+        height: 18px;
+    }
+
+    .price span {
+        font-size: 14px;
+        line-height: 10px;
+    }
+
+    .instock{
+        display: none;
+    }
+}

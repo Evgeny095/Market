@@ -1,0 +1,34 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+
+.iframe {
+    height: 250px;
+    width: 739px;
+    max-width: 100%;
+}
+
+.color_green {
+    color: #27AE60;
+
+}
+
+.list {
+    list-style: none;
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+
+    .list {
+        text-align: left;
+        padding: 0;
+    }
+
+}

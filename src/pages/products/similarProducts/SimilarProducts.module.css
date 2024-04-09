@@ -1,0 +1,26 @@
+.other_products {
+    margin-top: 50px;
+}
+
+
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+
+@media (max-width: 1024px) {
+    .products {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 990px) {
+    .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+}

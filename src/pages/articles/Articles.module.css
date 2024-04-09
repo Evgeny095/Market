@@ -1,0 +1,134 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.menu_container {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.menu_button {
+    display: inline-block;
+    border: 0;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu_button_active {
+    color: #5661CB;
+}
+
+.elements_container {
+    margin-top: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.select{
+    display: none;
+}
+
+@media (max-width: 1024px) {
+
+    .elements_container {
+        gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+    }
+
+    .menu_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .menu_button {
+        text-align: left;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 870px){
+    
+    .elements_container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .menu_button {
+        text-align: left;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 680px) {
+
+
+    .menu_container {
+        display: none;
+    }
+
+    .menu_container_select {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu_container_select select {
+        display: block;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        color: #5661CB;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 5px;
+        border: 0.3px solid #5661CB;
+    }
+
+    .select:focus {
+        outline: none;
+        /* Убираем стандартный фокус */
+        border-color: #007bff;
+        /* Цвет границы при фокусе */
+        box-shadow: 0 0 5px rgba(97, 100, 102, 0.7);
+        /* Тень при фокусе */
+    }
+
+    .select option {
+        background-color: #f2f2f2;
+        /* Цвет фона опции */
+        color: #333;
+        /* Цвет текста опции */
+        padding: 5px 10px;
+        /* Поля внутри опции */
+    }
+
+    /* Изменение стилей для опции выбора при наведении */
+    .select option:hover {
+        background-color: #5661CB !important;
+    }
+
+    /* Сделать меню селект */
+}

@@ -1,0 +1,41 @@
+.search {
+    width: 260px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid gray;
+    padding-left: 10px;
+    padding-right: 50px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.button {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    cursor: pointer;
+    right: 8px;
+    top: 10px;
+    z-index: +1;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.2);
+}
+
+/* .wrapper::after {
+    content: url('../../img/icons/search.svg');
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    z-index: +1;
+} */
+
+.search:hover,
+:focus,
+:active {
+    outline: none;
+}

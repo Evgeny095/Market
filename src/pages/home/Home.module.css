@@ -1,0 +1,125 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+
+.heading {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+}
+
+.projects,
+.articles {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 1.5;
+    gap: 10px;
+}
+
+.services {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    gap: 0;
+    flex-grow: 1.5;
+    gap: 10px;
+}
+
+.products {
+    width: 100%;
+    display: grid !important;
+    gap: auto !important;
+    grid-template-columns: repeat(5, 1fr);
+    height: auto;
+    flex-grow: 1.5;
+    gap: 10px !important;
+    padding-right: 0 !important;
+}
+
+.article_height {
+    height: 540px !important;
+}
+
+.project_height {
+    height: 300px !important;
+}
+
+@media (max-width: 1280px) {
+
+    .products {
+        width: 100%;
+        display: grid !important;
+        gap: auto !important;
+        place-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        height: auto;
+        flex-grow: 1.5;
+        gap: 20px !important;
+    }
+
+}
+
+.focus {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+
+@media (max-width: 1024px) {
+
+    .heading {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .products {
+        width: 100%;
+        display: grid !important;
+        gap: auto !important;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+        flex-grow: 1.5;
+        gap: 20px !important;
+    }
+
+    .services {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        place-items: center;
+    }
+}
+
+
+@media (max-width: 440px) {
+
+
+    .services {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .products {
+        gap: 5px !important;
+    }
+}

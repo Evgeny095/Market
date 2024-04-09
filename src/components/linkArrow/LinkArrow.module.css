@@ -1,0 +1,78 @@
+.link_back{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    padding-right: 80px;
+}
+
+.link_back::before{
+    content: "←";
+    font-size: 28px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    padding-left: 100px;
+    font-weight: bold;
+}
+
+.link_back:hover{
+    opacity: 0.9;
+}
+
+.link_back:hover::before{
+    margin-right: 30px;
+    opacity: 0.9;
+}
+
+/*  */
+
+.link_next{
+    text-align: right;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    padding-right: 50px;
+    position: relative;
+}
+
+.link_next::after{
+    content: "→";
+    font-size: 28px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-left: 10px;
+    position: absolute;
+    top: -12px;
+}
+
+.link_next:hover{
+    opacity: 0.9;
+}
+
+.link_next:hover::after{
+    opacity: 0.9;
+    margin-left: 30px;
+}
+
+@media (max-width: 500px) {
+    .link_back{
+        font-size: 16px;
+    }
+
+    .link_back::before{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 390px) {
+    .link_back{
+        /* font-size: 12px; */
+        padding-right: 60px;
+    }
+
+    .link_back::before{
+        /* font-size: 14px; */
+        padding-left: 50px;
+    }
+
+}

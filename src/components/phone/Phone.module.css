@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.container_img {
+    cursor: pointer;
+}
+
+.container_img:hover {
+    opacity: 0.7;
+}
+
+.phone {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.025em;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+.calback {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    display: inline-block;
+    color: #5661CB;
+    background-color: transparent;
+    border: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.calback:hover {
+    opacity: 0.7;
+}
+
+
+@media (max-width: 1600px) {
+    .phone {
+        font-size: 16px;
+    }
+
+    .calback {
+        font-size: 12px;
+    }
+
+}

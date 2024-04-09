@@ -1,0 +1,95 @@
+.swiper {
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    animation: openInit 0.5s ease;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+}
+
+.swiperSlide {
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
+
+
+.swiperNavPrev,
+.swiperNavNext {
+    top: 45%;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.swiperNavPrev {
+    left: 0;
+    background-image: url('../../../img//icons/location_arrow.svg');
+    transform: rotateZ(-90deg);
+    width: 50px;
+    height: 50px;
+}
+
+.swiperNavNext {
+    right: 0;
+    background-image: url('../../../img//icons/location_arrow.svg');
+    transform: rotateZ(90deg);
+    width: 50px;
+    height: 50px;
+}
+
+.swiperNavPrev:hover,
+.swiperNavNext:hover {
+    opacity: 0.7;
+}
+
+
+@keyframes openInit {
+    0% {
+        min-height: 0%;
+        max-height: 0%;
+        opacity: 0;
+    }
+
+    50% {
+        min-height: 0%;
+        max-height: 0%;
+        opacity: 0;
+    }
+
+    100% {
+        min-height: 100%;
+        max-height: 100%;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .swiperNavPrev,
+    .swiperNavNext {
+        top: 70%;
+    }
+}
