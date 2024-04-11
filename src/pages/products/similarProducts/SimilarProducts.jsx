@@ -1,13 +1,13 @@
 import { ProductPreviewItem } from '../../../components/productPreviewItem/ProductPreviewItem';
 import cl from './SimilarProducts.module.css'
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts } from '../../../store/productSlice';
 import { Prloader } from '../../../components/preloader/Preloader';
 
 
 
-function SimilarProducts({ category, count, className, ...props }) {
+const SimilarProducts=memo(({ category, count, className, ...props }) =>{
 
     //Достаем данные--
     const { products, loading, error } = useSelector((state) => state.product);
@@ -39,8 +39,8 @@ function SimilarProducts({ category, count, className, ...props }) {
             {!loading && products.length>0&& getOtherProduct(products)}
         </div>
     </>
-}
-
+});
+SimilarProducts.displayName = 'SimilarProducts'; 
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);

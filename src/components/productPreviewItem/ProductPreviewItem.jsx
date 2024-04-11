@@ -13,14 +13,14 @@ import sale from '../../img/icons/previewProduct/sale.png'
 import favorite_false from '../../img/icons/previewProduct/favorite_false.svg'
 import favorite_true from '../../img/icons/previewProduct/favorite_true.svg'
 
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addInCart, togleCount, removeInCart } from '../../store/cartSlice'
 import { addfavorite, removefavorite } from '../../store/favoriteSlice'
 
 
-function ProductPreviewItem({ id, img, header, description, price, advantages, category, development,  instock, faoviteRemove }) {
+const ProductPreviewItem=memo(({ id, img, header, description, price, advantages, category, development,  instock, faoviteRemove })=>{
 
     const inStock=Boolean(instock);
     
@@ -79,13 +79,10 @@ function ProductPreviewItem({ id, img, header, description, price, advantages, c
         switch (advantages) {
             case 'lider':
                 return <img src={lider} className={cl.adv_img} alt='lider' />
-                break;
             case 'today':
                 return <img src={today} className={cl.adv_img} alt='today' />
-                break;
             case 'sale':
                 return <img src={sale} className={cl.adv_img} alt='sale' />
-                break;
             default:
                 return <span></span>
         }
@@ -117,6 +114,6 @@ function ProductPreviewItem({ id, img, header, description, price, advantages, c
             </div>
         </div>
     </div>
-}
-
+});
+ProductPreviewItem.displayName = 'ProductPreviewItem'; // Устанавливаем displayName для компонента
 export { ProductPreviewItem }

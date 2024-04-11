@@ -2,7 +2,7 @@ import { ProductPreviewItem } from '../../components/productPreviewItem/ProductP
 import cl from './Products.module.css'
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { fetchProducts } from '../../store/productSlice';
 import { sortProducts } from '../../store/productSlice';
 import { ProdusctsFiltres } from './produsctsFiltres/ProdusctsFiltres';
@@ -44,12 +44,12 @@ function Products() {
 
 
     //Мап данных в компоненет
-    const mapArr = (arr) => {
+    const mapArr = useCallback( (arr) => {
         return arr.map(el => {
     
                 return <ProductPreviewItem key={el.id} {...el} />
         })
-    }
+    },[products])
     // -- Достаем данные
 
     //Отлеживаем изменение и сортируем
