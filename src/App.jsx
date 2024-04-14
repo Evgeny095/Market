@@ -31,9 +31,7 @@ function App() {
   return (
     <>
       <Routes>
-        {/* 1 Route для Loyout */}
         <Route path='/' element={<Loyout />}>
-          {/* Для первого маршрута index будет работать по - "/" */}
           <Route index element={<Home />} />
           <Route path='products/:category' element={<Products />} />
           <Route path='product/:id' element={<Product />} />

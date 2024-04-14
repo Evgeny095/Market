@@ -3,32 +3,27 @@ import { init_previewProducts } from '../data/initProducts';
 import { API, SORT } from '../constants/constants';
 import axios from 'axios';
 
-// Асинхронная операция для получения объекта "product" по id
+
 export const fetchProductById = createAsyncThunk(
   'products/fetchProductById',
   async (productId) => {
-    //const response = await axios.get(`${API}/products?id=${productId}`);
+
     const response = await axios.get(`${API}/products/id/${productId}`);
     return response.data[0];
   }
 );
 
-// Асинхронная операция для получения массива "products"
+
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async (category) => {
-   // const response = await axios.get(`${API}/products?category=${category}`);
-    //тест--
-    // const data = init_previewProducts.filter(el => el.category == category)
-    // const response = { data: data };
-    // await new Promise(resolve => setTimeout(resolve, 300));
-    //--тест
+
     const response = await axios.get(`${API}/products/category/${category}`);
     return response.data;
   }
 );
 
-// Асинхронная операция для получения массива "products"
+
 export const fetchSearchProducts = createAsyncThunk(
   'products/fetchSearchProducts',
   async (searchValue) => {
@@ -122,9 +117,9 @@ const productSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchSearchProducts.fulfilled, (state, action) => {
-          state.loading = false;
-          state.products = action.payload;
-          state.noSort_products = action.payload;
+        state.loading = false;
+        state.products = action.payload;
+        state.noSort_products = action.payload;
       })
       .addCase(fetchSearchProducts.rejected, (state, action) => {
         state.loading = false;

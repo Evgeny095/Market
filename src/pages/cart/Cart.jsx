@@ -1,6 +1,5 @@
-import { ProductPreviewItem } from '../../components/productPreviewItem/ProductPreviewItem';
 import cl from './Cart.module.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import delivery from '../../img/adventeg_title/Delivery.png';
 import price from '../../img/adventeg_title/Price.png';
 import sales from '../../img/adventeg_title/Sales.png';
@@ -8,15 +7,15 @@ import works from '../../img/adventeg_title/Works.png';
 import { CartItem } from './item/CartItem';
 import MainButton from '../../components/mainButton/MainButton';
 import Faq from '../../components/faq/Faq';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import ModalWindow from '../../components/modalWindows/ModalWindow';
 import useFocus from '../../hooks/useFocus';
 
 
 function Cart() {
-    const focusPage=useFocus();
+    const focusPage = useFocus();
     const products = useSelector(state => state.cart.cart);
-    const productsArr = products.map(el => <CartItem key={el.id} {...el} />)
+    const productsArr = useMemo(() => products.map(el => <CartItem key={el.id} {...el} />), [products]);
     const [payMessage, setPayMessage] = useState(false);
 
 

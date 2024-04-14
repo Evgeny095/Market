@@ -1,5 +1,6 @@
 import cl from './Stock.module.css';
-import { Banner, Banners } from '../../components/banners/Banners';
+import { Banners } from '../../components/banners/Banners';
+import { Banner } from '../../components/banners/Banner';
 import { init_banners } from '../../data/initBanners';
 import useWindowSize from "../../hooks/useWindowSize";
 import { SimilarProducts } from "../products/similarProducts/SimilarProducts";
@@ -7,7 +8,7 @@ import useFocus from '../../hooks/useFocus';
 
 
 function Stock() {
-    const pageFocus=useFocus();
+    const pageFocus = useFocus();
     function viewContent() {
         const windowSize = useWindowSize();
         return init_banners.map(el => {

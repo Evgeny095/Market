@@ -51,9 +51,7 @@ function Header() {
                 </nav>
                 <div className={cl.header_right}>
                     <FavoriteIcon />
-                    {/* <LinkIcons to='favorite' src={star} alt='favorite' /> */}
                     <CartIcon />
-                    {/* <LinkIcons to='cart' src={cart} alt='cart' /> */}
                     <Phone>8 (001) 001-00-01</Phone>
                 </div>
             </header>
@@ -82,9 +80,7 @@ function Header() {
                     <Logo />
                     <div className={cl.header_right}>
                         <FavoriteIcon />
-                        {/* <LinkIcons to='about' src={star} alt='favorite' /> */}
                         <CartIcon />
-                        {/* <LinkIcons to='about' src={cart} alt='cart' /> */}
                         <Phone>8 (0001) 001-11-01</Phone>
                         <button onClick={() => setOpenBurger(true)} className={cl.button_burger}>
                             <img className={cl.button_burger__img} src={burger} alt="burger menu" />

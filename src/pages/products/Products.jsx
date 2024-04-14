@@ -2,7 +2,7 @@ import { ProductPreviewItem } from '../../components/productPreviewItem/ProductP
 import cl from './Products.module.css'
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { fetchProducts } from '../../store/productSlice';
 import { sortProducts } from '../../store/productSlice';
 import { ProdusctsFiltres } from './produsctsFiltres/ProdusctsFiltres';
@@ -14,26 +14,23 @@ import useFocus from '../../hooks/useFocus';
 
 
 function Products() {
-    const pageFocus=useFocus();
+    const pageFocus = useFocus();
 
-    //Параметр
+
     const { category } = useParams();
 
-    //Стйты управления компонентами
+
     const [selectedOption, setSelectedOption] = useState('');
 
 
-    //Функции с управления компонентом---
-    //Сортировка
+
     const handleSelectChange = (event) => {
         setSelectedOption(event.target.value);
         dispatch(sortProducts(event.target.value))
 
     };
 
-    //--- Функции с управления компонентом
 
-    //Достаем данные--
     const { products, loading, error } = useSelector((state) => state.product);
     const dispatch = useDispatch();
 
@@ -43,16 +40,14 @@ function Products() {
 
 
 
-    //Мап данных в компоненет
-    const mapArr = (arr) => {
-        return arr.map(el => {
-    
-                return <ProductPreviewItem key={el.id} {...el} />
-        })
-    }
-    // -- Достаем данные
 
-    //Отлеживаем изменение и сортируем
+    const mapArr = useCallback((arr) => {
+        return arr.map(el => {
+
+            return <ProductPreviewItem key={el.id} {...el} />
+        })
+    }, [products])
+
     function sortSignal() {
         dispatch(sortProducts(selectedOption))
     }
@@ -72,14 +67,12 @@ function Products() {
                 </select>
             </div>
             <div className={cl.products_container}>
-                {/* {loading && <div className={cl.message_container}>loading...</div>} */}
                 {loading && <Prloader />}
                 {error && <div className={cl.message_container}>Error:{error}</div>}
-                {!loading && products.length>0&& mapArr(products)}
+                {!loading && products.length > 0 && mapArr(products)}
             </div>
         </div>
-        {/* <ProductPreviewItem /> */}
-        {/* <cartButton /> */}
+
     </section>
 }
 

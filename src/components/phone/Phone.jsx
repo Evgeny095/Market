@@ -26,16 +26,16 @@ function Phone({ children }) {
         {
             !(size.width >= 1150) &&
             <div>
-            <ModalWindow visible={formCallback} setVisible={setformCallback} noButton={true}>
-            <CallbackForm closeFunc={() => setformCallback(false)} />
-            </ModalWindow>
-            <div className={cl.container_img}>
-                <img onClick={() => setformCallback(true)} src={icon} alt="callback" />
-            </div>
+                <ModalWindow visible={formCallback} setVisible={setformCallback} noButton={true}>
+                    <CallbackForm closeFunc={() => setformCallback(false)} />
+                </ModalWindow>
+                <div className={cl.container_img}>
+                    <img onClick={() => setformCallback(true)} src={icon} alt="callback" />
+                </div>
             </div>
         }
     </>);
 }
 
 export default Phone;
-// <Phone>8 (843) 203-93-43</Phone>
+// <Phone>8 (001) 001-00-01</Phone>

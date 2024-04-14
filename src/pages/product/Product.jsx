@@ -18,7 +18,7 @@ import useFocus from '../../hooks/useFocus';
 
 
 function Product() {
-    const refPage=useFocus();
+    const refPage = useFocus();
     const windowSize = useWindowSize();
     const linkRef = useRef(null);
     const { id } = useParams();
@@ -98,9 +98,6 @@ function Product() {
             <Message statehandler={message.favoriteYes} bottomPosition={'12%'}>Товар добавлен в Избранное</Message>
             <h2 ref={refPage} className='h2_header'>{product.header}</h2>
             <div className={cl.func_container}>
-                {/* <div className={cl.img_container}>
-                <img src={product.img} alt={product.header} />
-            </div> */}
                 <div className={cl.img_container}>
                     <ProductImgSwiper imgs={product.img} />
                     <IconButton onClick={zoomhandlerClick} src={zoom} alt="Приблизить" className={cl.zoom} />

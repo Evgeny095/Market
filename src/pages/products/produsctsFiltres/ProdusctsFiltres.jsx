@@ -9,14 +9,14 @@ import useWindowSize from '../../../hooks/useWindowSize';
 
 
 function ProdusctsFiltres({ sortSignal }) {
-  const [seeFiltres,SetSeeFiltres]=useState(true);
+  const [seeFiltres, SetSeeFiltres] = useState(true);
   const windowSize = useWindowSize();
 
   useEffect(() => {
-    if(windowSize.width<=900){
+    if (windowSize.width <= 900) {
       SetSeeFiltres(false)
     }
-    else{
+    else {
       SetSeeFiltres(true)
     }
   }, [windowSize.width]);
@@ -43,9 +43,9 @@ function ProdusctsFiltres({ sortSignal }) {
     }));
     getArrNameDevelopment(name, checked);
   };
-  
 
-  //Получаем массив для фильтра по производителю
+
+
   function getArrNameDevelopment(name, value) {
     let resultArr = Array.from(developments);
     if (value === true) {
@@ -63,96 +63,94 @@ function ProdusctsFiltres({ sortSignal }) {
   }, [developments, dispatch]);
 
 
-  //Функции кнопок
+
   function setFiltres() {
     dispatch(setProductsFiltres())
     sortSignal();
   }
 
-    //Разобраться со сбросом значений
-    function resetFiltres() {
-      const objFalse = checkboxes;
-      for (let key in objFalse) {
-        objFalse[key] = false;
-      }
-      setCheckboxes(objFalse);
-      setDevelopments([]);
-      //dispatch(resetProductsFiltres());
-      sortSignal();
+  function resetFiltres() {
+    const objFalse = checkboxes;
+    for (let key in objFalse) {
+      objFalse[key] = false;
     }
+    setCheckboxes(objFalse);
+    setDevelopments([]);
+    sortSignal();
+  }
   return <>
-  {windowSize.width <=940 && <MainButton onClick={()=>SetSeeFiltres(!seeFiltres)}>{seeFiltres?'Скрыть фильтры':'Показать фильтры'}</MainButton>}
-  {seeFiltres && <div className={cl.filters}>
-    <h4 className={cl.heading_filtres}>Производители:</h4>
-    <label>
-      <input
-        type="checkbox"
-        name="Porotherm"
-        checked={checkboxes.Porotherm}
-        onChange={handleCheckboxChange}
-      />
-      Porotherm
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        name="ЛСР"
-        checked={checkboxes.ЛСР}
-        onChange={handleCheckboxChange}
-      />
-      ЛСР
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        name="Тольяттинский"
-        checked={checkboxes.Тольяттинский}
-        onChange={handleCheckboxChange}
-      />
-      Тольяттинский
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        name="Unis"
-        checked={checkboxes.Unis}
-        onChange={handleCheckboxChange}
-      />
-      Unis
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        name="Основит"
-        checked={checkboxes.Основит}
-        onChange={handleCheckboxChange}
-      />
-      Основит
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        name="Ruflex"
-        checked={checkboxes.Ruflex}
-        onChange={handleCheckboxChange}
-      />
-      Ruflex
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        name="Terka"
-        checked={checkboxes.Terka}
-        onChange={handleCheckboxChange}
-      />
-      Terka
-    </label>
+    {windowSize.width <= 940 && <MainButton onClick={() => SetSeeFiltres(!seeFiltres)}>{seeFiltres ? 'Скрыть фильтры' : 'Показать фильтры'}</MainButton>}
+    {seeFiltres && <div className={cl.filters}>
+      <h4 className={cl.heading_filtres}>Производители:</h4>
+      <label>
+        <input
+          type="checkbox"
+          name="Porotherm"
+          checked={checkboxes.Porotherm}
+          onChange={handleCheckboxChange}
+        />
+        Porotherm
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="ЛСР"
+          checked={checkboxes.ЛСР}
+          onChange={handleCheckboxChange}
+        />
+        ЛСР
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="Тольяттинский"
+          checked={checkboxes.Тольяттинский}
+          onChange={handleCheckboxChange}
+        />
+        Тольяттинский
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="Unis"
+          checked={checkboxes.Unis}
+          onChange={handleCheckboxChange}
+        />
+        Unis
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="Основит"
+          checked={checkboxes.Основит}
+          onChange={handleCheckboxChange}
+        />
+        Основит
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="Ruflex"
+          checked={checkboxes.Ruflex}
+          onChange={handleCheckboxChange}
+        />
+        Ruflex
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="Terka"
+          checked={checkboxes.Terka}
+          onChange={handleCheckboxChange}
+        />
+        Terka
+      </label>
 
-    <div className={cl.btn_container}>
-      {productsFiltres.length > 0 && <MainButton onClick={setFiltres}>Показать ({productsFiltres.length})</MainButton>}
-      {Object.values(checkboxes).includes(true) && <button className={cl.resetFiltres} onClick={resetFiltres}>Сбросить фильтры</button>}
-    </div>
-  </div>}
+      <div className={cl.btn_container}>
+        {productsFiltres.length > 0 && <MainButton onClick={setFiltres}>Показать ({productsFiltres.length})</MainButton>}
+        {Object.values(checkboxes).includes(true) && <button className={cl.resetFiltres} onClick={resetFiltres}>Сбросить фильтры</button>}
+      </div>
+    </div>}
   </>
 }
 

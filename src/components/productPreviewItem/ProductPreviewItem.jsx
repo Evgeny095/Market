@@ -13,21 +13,20 @@ import sale from '../../img/icons/previewProduct/sale.png'
 import favorite_false from '../../img/icons/previewProduct/favorite_false.svg'
 import favorite_true from '../../img/icons/previewProduct/favorite_true.svg'
 
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addInCart, togleCount, removeInCart } from '../../store/cartSlice'
 import { addfavorite, removefavorite } from '../../store/favoriteSlice'
 
 
-function ProductPreviewItem({ id, img, header, description, price, advantages, category, development,  instock, faoviteRemove }) {
+const ProductPreviewItem = memo(({ id, img, header, description, price, advantages, category, development, instock, faoviteRemove }) => {
 
-    const inStock=Boolean(instock);
-    
-    let headerSplit= header.split(' ').slice(0, 4).join(' ');
-    if(headerSplit.length<header.length)
-        headerSplit=headerSplit+'...';
-    //description=description.split(' ').slice(0, 5).join(' ');
+    const inStock = Boolean(instock);
+
+    let headerSplit = header.split(' ').slice(0, 4).join(' ');
+    if (headerSplit.length < header.length)
+        headerSplit = headerSplit + '...';
     const elements_onCart = useSelector(state => state.cart.onCart)
     function checkElementOnCart() {
         if (elements_onCart.find(el => el == id)) return true;
@@ -79,13 +78,10 @@ function ProductPreviewItem({ id, img, header, description, price, advantages, c
         switch (advantages) {
             case 'lider':
                 return <img src={lider} className={cl.adv_img} alt='lider' />
-                break;
             case 'today':
                 return <img src={today} className={cl.adv_img} alt='today' />
-                break;
             case 'sale':
                 return <img src={sale} className={cl.adv_img} alt='sale' />
-                break;
             default:
                 return <span></span>
         }
@@ -101,11 +97,10 @@ function ProductPreviewItem({ id, img, header, description, price, advantages, c
             <img className={cl.prewImg} src={img} alt={headerSplit} />
             <Link to={path} className={cl.header}>{headerSplit}</Link>
             <p className={cl.development}>Производитель: <span>{development}</span></p>
-            {/* <Link to={path} className={cl.description}>{description}</Link> */}
             <div className={cl.market_state}>
                 <p>бесплатная доставка</p>
                 {inStock && <p className={cl.instock}>в наличии</p>}
-                {!inStock && <p className={cl.instock+' text_red'}>нет в наличие</p>}
+                {!inStock && <p className={cl.instock + ' text_red'}>нет в наличие</p>}
             </div>
             <p className={cl.price}><span>{price}</span> ₽/ шт</p>
             <div className={cl.buttons}>
@@ -117,6 +112,6 @@ function ProductPreviewItem({ id, img, header, description, price, advantages, c
             </div>
         </div>
     </div>
-}
-
+});
+ProductPreviewItem.displayName = 'ProductPreviewItem'; // Устанавливаем displayName для компонента
 export { ProductPreviewItem }

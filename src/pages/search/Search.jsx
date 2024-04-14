@@ -11,7 +11,6 @@ import useFocus from '../../hooks/useFocus';
 function Search() {
     const { products, loading, error } = useSelector((state) => state.product);
     const pageFocus = useFocus();
-    //Мап данных в компоненет
     const mapArr = (arr) => {
         return arr.map(el => {
 

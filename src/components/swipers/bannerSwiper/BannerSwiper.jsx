@@ -15,7 +15,7 @@ import 'swiper/css/zoom';
 
 // import required modules
 import { Autoplay, Pagination, Navigation, Zoom, } from 'swiper/modules';
-import { Banner } from '../../banners/Banners';
+import { Banner } from '../../banners/Banner';
 import { init_banners } from '../../../data/initBanners';
 
 function BannerSwiper({ className }) {

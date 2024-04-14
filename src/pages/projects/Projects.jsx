@@ -6,10 +6,10 @@ import useFocus from '../../hooks/useFocus';
 
 
 function Projects() {
-    const pagefocus=useFocus();
+    const pagefocus = useFocus();
     const [category, setCategory] = useState(0);
 
-    //select
+
     const handleSelectChange = (event) => {
         setCategory(event.target.value);
 
@@ -24,7 +24,7 @@ function Projects() {
         if (Number(el.category) === Number(category)) return <ProjectItem key={el.id} {...el} />
     })
 
-    // Кнопки
+
     function clButton(mainCategory) {
         return mainCategory === category ? `${cl.menu_button} ${cl.menu_button_active}`
             : cl.menu_button;

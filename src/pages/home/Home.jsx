@@ -9,7 +9,6 @@ import { SimilarProducts } from "../products/similarProducts/SimilarProducts";
 import useWindowSize from "../../hooks/useWindowSize";
 import { MainSwiper } from '../../components/swipers/mainSwiper/MainSwiper';
 import { initServices } from '../../data/initServices';
-import StockLine from '../../components/stockLine/StockLine';
 import useFocus from "../../hooks/useFocus";
 
 

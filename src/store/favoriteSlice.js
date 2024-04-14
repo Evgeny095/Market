@@ -1,17 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const favoriteSlice = createSlice({
-    //сам объект
     name: 'favorite',
 
-    // изначальное состояние
     initialState: {
         favorite: [],
         onFavorite: []
     },
-    // набор методов для дальнейшего использования
+
     reducers: {
-        // необхадимые мне, мои методы
+
         addfavorite(state, action) {
             if (state.favorite.id == action.payload.id)
                 return;
@@ -27,8 +25,8 @@ const favoriteSlice = createSlice({
     },
 })
 
-// дескретезируем автомотически созданиые собыитя по всем методам
+
 export const { addfavorite, removefavorite } = favoriteSlice.actions;
 
-// набор методов
+
 export default favoriteSlice.reducer;

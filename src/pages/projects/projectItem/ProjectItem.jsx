@@ -3,12 +3,11 @@ import Fancybox from '../../../components/fancybox/FancyBox';
 import MainButton from '../../../components/mainButton/MainButton'
 import { useRef, useState } from 'react';
 
-// test
 
 
 
 function ProjectItem({ img, header, description, picturesForGallery }) {
-    //test 
+
     const linkRef = useRef(null);
 
 
@@ -31,12 +30,12 @@ function ProjectItem({ img, header, description, picturesForGallery }) {
     }
 
     return (<>
-        <div className={cl.container}>
+        <div className={cl.container} onClick={handleClick}>
             <img src={img} alt={header} />
             <div className={cl.content_container}>
                 <p className={cl.header}>{header}</p>
                 <p>{description}</p>
-                <MainButton white={true} onClick={handleClick}>Смотреть галерею</MainButton>
+                <MainButton white={true} >Смотреть галерею</MainButton>
             </div>
             <Fancybox
                 options={{

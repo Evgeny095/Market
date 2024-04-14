@@ -75,10 +75,6 @@ function About() {
         <div className={cl.projects}>
             {viewProjects()}
         </div>
-        {/* <h2 className='h2_header'>Отзывы</h2>
-        <p className='p_standart'>Полнотелый кирпич – это популярный строительный материал, который был изобретен столетия назад, но до их пор пользуется большим спросом. </p>
-        <div className={cl.fid_back}>
-        </div> */}
     </section>
 }
 

@@ -13,12 +13,11 @@ const Loyout = () => {
             <div className={cl.content}>
                 <Header />
                 <NavigationBlock />
-                {/* Outlet - Содержит в себе основной контент */}
                 <main className={cl.main}>
                     <NavigateLink />
                     <Outlet />
                 </main>
-                <BrandsSwiper/>
+                <BrandsSwiper />
             </div>
             <Footer className={cl.footer} />
         </div>

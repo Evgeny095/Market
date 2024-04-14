@@ -49,7 +49,7 @@ function BigOrder({ closeFunc }) {
     const postData = async (data) => {
         try {
             const response = await axios.post(`${API}`, {
-                action:'bigOrder',
+                action: 'bigOrder',
                 ...data
             });
 
@@ -70,7 +70,7 @@ function BigOrder({ closeFunc }) {
                 <div className={cl.content}>
                     <input type="text" name='name' value={formData.name} onChange={handleChange} placeholder='Имя' />
                     <input type="tel" name='phone' value={formData.phone} onChange={handleChange} placeholder='Телефон' />
-                    <input type="text" name='adress' value={formData.adress} onChange={handleChange} placeholder='куда везти' />
+                    <input type="text" name='adress' value={formData.adress} onChange={handleChange} placeholder='Куда везти' />
                 </div>
                 {succses.length < 1 && <MainButton type="submit">Отправить</MainButton>}
                 {succses.length > 1 && <MainButton onClick={closeFunc}>Закрыть</MainButton>}

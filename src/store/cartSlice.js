@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const cartSlice = createSlice({
-    //сам объект
+
     name: 'cart',
 
-    // изначальное состояние
+
     initialState: {
         cart: [],
         prices: 0,
         onCart: []
     },
-    // набор методов для дальнейшего использования
+
     reducers: {
-        // необхадимые мне, мои методы
+
         addInCart(state, action) {
             if (state.cart.find(el => el.id === action.payload.id))
                 return;
@@ -32,7 +32,6 @@ const cartSlice = createSlice({
 
 
         togleCount(state, action) {
-            // console.log(action.payload)
             const res = state.cart.find(el => el.id === action.payload.id)
             res.count = action.payload.count;
             state.prices = sum(state.cart);
@@ -42,19 +41,17 @@ const cartSlice = createSlice({
     },
 })
 
-// дескретезируем автомотически созданиые собыитя по всем методам
+
 export const { addInCart, removeInCart, togleCount, findInCart } = cartSlice.actions;
 
-// набор методов
+
 export default cartSlice.reducer;
 
 
 function sum(arr) {
     let sum = 0;
-    //console.log(arr[0].count);
     for (let i = 0; i < arr.length; i++) {
         sum = sum + (arr[i].count * arr[i].price)
     }
-    //console.log(sum);
     return sum;
 }

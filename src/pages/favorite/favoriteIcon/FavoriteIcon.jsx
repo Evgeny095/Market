@@ -11,7 +11,6 @@ function FavoriteIcon() {
     return <div className={cl.wrapper}>
         {elements.length < 1 && <LinkIcons to='favorite' src={favorite_fase} alt='favorite' />}
         {elements.length > 0 && <LinkIcons to='favorite' src={favorite_true} alt='favorite' />}
-        {/* {elements.length > 0 && <span className={cl.count}>{elements.length}</span>} */}
     </div>
 }
 
