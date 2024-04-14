@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+//import { ProductPreviewItem } from '../../components/productPreviewItem/ProductPreviewItem';
+>>>>>>> b14d77138efbffc44228d0f0e5ed17154def891c
 import cl from './Cart.module.css';
 import { useSelector } from 'react-redux';
 import delivery from '../../img/adventeg_title/Delivery.png';
@@ -15,7 +19,11 @@ import useFocus from '../../hooks/useFocus';
 function Cart() {
     const focusPage = useFocus();
     const products = useSelector(state => state.cart.cart);
+<<<<<<< HEAD
     const productsArr = useMemo(() => products.map(el => <CartItem key={el.id} {...el} />), [products]);
+=======
+    const productsArr = useMemo(()=>products.map(el => <CartItem key={el.id} {...el} />),[products]);
+>>>>>>> b14d77138efbffc44228d0f0e5ed17154def891c
     const [payMessage, setPayMessage] = useState(false);
 
 

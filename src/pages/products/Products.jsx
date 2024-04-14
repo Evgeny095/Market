@@ -40,6 +40,17 @@ function Products() {
 
 
 
+<<<<<<< HEAD
+=======
+    //Мап данных в компоненет
+    const mapArr = useCallback( (arr) => {
+        return arr.map(el => {
+    
+                return <ProductPreviewItem key={el.id} {...el} />
+        })
+    },[products])
+    // -- Достаем данные
+>>>>>>> b14d77138efbffc44228d0f0e5ed17154def891c
 
     const mapArr = useCallback((arr) => {
         return arr.map(el => {

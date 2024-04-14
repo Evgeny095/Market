@@ -20,7 +20,11 @@ import { addInCart, togleCount, removeInCart } from '../../store/cartSlice'
 import { addfavorite, removefavorite } from '../../store/favoriteSlice'
 
 
+<<<<<<< HEAD
 const ProductPreviewItem = memo(({ id, img, header, description, price, advantages, category, development, instock, faoviteRemove }) => {
+=======
+const ProductPreviewItem=memo(({ id, img, header, description, price, advantages, category, development,  instock, faoviteRemove })=>{
+>>>>>>> b14d77138efbffc44228d0f0e5ed17154def891c
 
     const inStock = Boolean(instock);
 
